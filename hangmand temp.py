@@ -4,13 +4,11 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 storemessage = []
 storemessageindex = []
 encoded = []
 def encrypt(text, shift):
-    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
-    #e.g. 
+
     for letter in text:
         storemessage.append(letter)
         storemessageindex.append(alphabet.index(letter) + shift)
@@ -19,7 +17,6 @@ def encrypt(text, shift):
         if encryptedindex > 25:
             encryptedindex = -1 + shift
         encoded.append(alphabet[encryptedindex])
-
 
 decstoremessage = []
 dedstoremessageindex = []
@@ -35,18 +32,6 @@ def decrypt(text, shift):
             encryptedindex = 26 - shift
         decoded.append(alphabet[encryptedindex])
 
-
-
-
-  #TODO-2: Inside the 'decrypt' function, shift each letter of the 'text' *backwards* in the alphabet by the shift amount and print the decrypted text.  
-  #e.g. 
-  #cipher_text = "mjqqt"
-  #shift = 5
-  #plain_text = "hello"
-  #print output: "The decoded text is hello"
-
-
-#TODO-3: Check if the user wanted to encrypt or decrypt the message by checking the 'direction' variable. Then call the correct function based on that 'drection' variable. You should be able to test the code to encrypt *AND* decrypt a message.
 if direction == 'encode':
     encrypt(text, shift)
     print(f"The encoded message is {''.join(encoded)}")
